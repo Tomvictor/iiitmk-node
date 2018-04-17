@@ -36,19 +36,23 @@ var server = net.createServer(function(socket) {
 		console.log(dataString);
 		//returning acknowledge
 
-		// var data = {
-  //         "latitude" : "123" ,
-  //         "longitude" : "123" ,
-  //         "device" : 1
-  //       }
 
 
 
-  		console.log("sending api request...")
+		var data = {
+          "latitude" :  dataString,
+          "longitude" : dataString ,
+          "device" : 1
+        }
+
+
+
+  		console.log("sending api request...") ;
+
 		var options = {
 		        uri: URL + '/api/?format=json',
 		        method: 'POST',
-		        json: dataString.toString()
+		        json: data
 		    };
 
 
