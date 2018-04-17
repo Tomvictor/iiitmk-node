@@ -3,7 +3,14 @@ var net = require('net');
 var client = new net.Socket();
 client.connect(8800, '139.59.29.99', function() {
 	console.log('Connected');
-	client.write('Hello, server! Love, Client.');
+
+
+	var data = {
+		"latitude" : "1234" ,
+		"longitude" : "1234" ,
+		"device" : 1
+	}
+	client.write(data);
     });
 
 client.on('data', function(data) {
