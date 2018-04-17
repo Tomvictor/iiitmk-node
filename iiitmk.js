@@ -5,11 +5,11 @@ const URL = "http://139.59.29.99"
 
 
 
-// {
-// "latitude" : "123" ,
-// "longitude" : "123" ,
-// "device" : 1
-// }
+ {
+ "latitude" : "123" ,
+ "longitude" : "123" ,
+ "device" : 1
+ }
 
 
 
