@@ -1,4 +1,15 @@
 var net = require('net');
+var request = require('request');
+
+const URL = "http://139.59.29.99"
+
+
+
+
+
+
+
+
 
 var server = net.createServer(function(socket) {
 	//listening event is not working
@@ -18,8 +29,31 @@ var server = net.createServer(function(socket) {
 		var dataString = data.toString('ascii');
 		console.log(dataString);
 		//returning acknowledge
+
+		// var data = {
+  //         "latitude" : "123" ,
+  //         "longitude" : "123" ,
+  //         "device" : 1
+  //       }
+
+
+		var options = {
+		        uri: URL + '/api/?format=json',
+		        method: 'POST',
+		        json: dataString
+		    };
+
+
+		request(options, function (error, response, body) {
+		  if (!error && response.statusCode == 200) {
+		    console.log(body) // Print the shortened url.                                                                                                                           
+		  }
+		});
+
+
+
 		var flag; 
-		flag = socket.write(dataString) ;
+		flag = socket.write("ok") ;
 		//console.log(flag);
 		
 	    });
