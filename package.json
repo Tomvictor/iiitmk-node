@@ -1,0 +1,22 @@
+{
+  "name": "iiitmk-node",
+  "version": "1.0.0",
+  "description": "college project",
+  "main": "iiitmk.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tomvictor/iiitmk-node.git"
+  },
+  "author": "Aneesh, Dhanya, Sarang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tomvictor/iiitmk-node/issues"
+  },
+  "homepage": "https://github.com/Tomvictor/iiitmk-node#readme",
+  "dependencies": {
+    "request": "^2.85.0"
+  }
+}
