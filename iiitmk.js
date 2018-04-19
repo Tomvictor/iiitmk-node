@@ -12,11 +12,6 @@ const URL = "http://139.59.29.99"
 // }
 
 
-
-
-
-
-
 var server = net.createServer(function(socket) {
 	//listening event is not working
 	socket.on('listening',() => {
@@ -24,7 +19,7 @@ var server = net.createServer(function(socket) {
 	    });
 	console.log("client connected"); //message on new connection
 	console.log(socket.address()); //This will display the client address
-	socket.write('iiitmk server\r\n'); //imediate message to client
+	socket.write('$ready'); //imediate message to client
 	//tring to read the data
 	socket.on('data',(data) => {
 		//console.log("Data Recieved:");
@@ -33,19 +28,15 @@ var server = net.createServer(function(socket) {
 		//console.log(data.length);
 		//console.log("Data in ascii");
 		var dataString = data.toString('ascii');
+		console.log("recieved data . . . ")
 		console.log(dataString);
 		//returning acknowledge
-
-
-
 
 		var data = {
           "latitude" :  dataString,
           "longitude" : dataString ,
           "device" : 1
         }
-
-
 
   		console.log("sending api request...") ;
 
@@ -56,7 +47,7 @@ var server = net.createServer(function(socket) {
 		    };
 
 
-		    console.log(options);
+		 console.log(options);
 
 		request(options, function (error, response, body) {
 		  if (!error && response.statusCode == 200) {
