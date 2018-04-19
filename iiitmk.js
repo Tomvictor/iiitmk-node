@@ -38,7 +38,7 @@ var server = net.createServer(function (socket) {
             if (jsonObj.switch) {
                 data = {
                     "latitude": jsonObj.latitude,
-                    "longitude": jsonObj.longitude,
+                    "longitude": jsonObj.longitide,
                     "device": jsonObj.deviceid
                 }
                 var options = {
