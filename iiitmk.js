@@ -41,26 +41,24 @@ var server = net.createServer(function (socket) {
                     "longitude": jsonObj.longitude,
                     "device": jsonObj.deviceid
                 }
+                var options = {
+                    uri: URL + '/api/?format=json',
+                    method: 'POST',
+                    json: data
+                };
+
+                console.log("sending api request...");
+
+
+                console.log(options);
+
+                request(options, function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        console.log(body) // Print the shortened url.                                                                                                                           
+                    }
+                });
+
             }
-
-            console.log("sending api request...");
-
-            var options = {
-                uri: URL + '/api/?format=json',
-                method: 'POST',
-                json: data
-            };
-
-
-            console.log(options);
-
-            request(options, function (error, response, body) {
-                if (!error && response.statusCode == 200) {
-                    console.log(body) // Print the shortened url.                                                                                                                           
-                }
-            });
-
-            console.log(jsonObj.latitude);
 
 
         } catch (err) {
