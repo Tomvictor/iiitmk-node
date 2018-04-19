@@ -37,8 +37,10 @@ var server = net.createServer(function(socket) {
 
 		console.log(jsonObj.latitude);
 
-		}catch{
+		}catch(err){
+
 			console.log("error on json parsing") ;
+			console.log(err) ;
 
 		}
 		
