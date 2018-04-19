@@ -32,6 +32,17 @@ var server = net.createServer(function(socket) {
 		console.log(dataString);
 		//returning acknowledge
 
+		try{
+			jsonObj = JSON.parse(dataString);
+
+		console.log(jsonObj.latitude);
+
+		}catch{
+			console.log("error on json parsing") ;
+
+		}
+		
+
 		var data = {
           "latitude" :  dataString,
           "longitude" : dataString ,
